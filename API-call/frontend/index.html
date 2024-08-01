@@ -14,12 +14,19 @@
     <script>
         let para = document.getElementById('output'); // DOM manipulation
 
-        fetch('http://localhost:3000/data') // Fetch API call
-            .then(res => {
-                return res.json(); // Convert the response to JSON and return it
-            })
+        <!-- Fetch API call -->
+        // fetch('http://localhost:3000/data') // Fetch API call
+        //     .then(res => {
+        //         return res.json(); // Convert the response to JSON and return it
+        //     })
+        //     .then((res) => {
+        //         para.innerHTML = JSON.stringify(res); // Display the data by stringifying the JSON
+        //     })
+
+        <!-- axios API call -->
+        axios.get('http://localhost:3000/data') // axios API call
             .then((res) => {
-                para.innerHTML = JSON.stringify(res); // Display the data by stringifying the JSON
+                para.innerHTML = JSON.stringify(res.data); // Display the data by stringifying the JSON
             })
     </script>
 
